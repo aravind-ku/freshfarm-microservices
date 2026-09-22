@@ -1,0 +1,17 @@
+apiVersion: gateway.k8s.aws/v1
+kind: TargetGroupConfiguration
+metadata:
+  name: frontend-targetgroup-config
+  namespace: freshfarm
+
+spec:
+  targetReference:
+    name: frontend
+
+  defaultConfiguration:
+    targetType: ip
+
+    healthCheckConfig:
+      healthCheckProtocol: HTTP
+      healthCheckPath: /
+      healthCheckPort: traffic-port

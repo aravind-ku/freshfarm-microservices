@@ -1,0 +1,87 @@
+# Secrets / Environment
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+
+# Node.js
+node_modules/
+**/node_modules/
+npm-debug.log*
+
+# Java
+target/
+**/target/
+*.class
+
+# Python
+__pycache__/
+**/__pycache__/
+.venv/
+venv/
+
+# .NET
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+
+# Windows
+Thumbs.db
+
+# Kubernetes secret manifests
+*secret*.yaml
+*secrets*.yaml
+
+
+# ==========================================
+# Fresh Farm - Development exclusions
+# ==========================================
+
+# Environment / secrets
+.env
+**/.env
+
+# Node
+**/node_modules/
+
+# Python
+analytics-service-python/venv/
+analytics-service-python/__pycache__/
+**/__pycache__/
+*.pyc
+
+# Java / Maven
+inventory-service-java/target/
+
+# .NET
+delivery-service-dotnet/bin/
+delivery-service-dotnet/obj/
+
+# Temporary backup source files
+order-service/server-before-compensation.js
+order-service/server-before-dairy.js
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local Docker secrets
+**/docker.env

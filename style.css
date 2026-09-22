@@ -1,0 +1,2092 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: #f4f8f4;
+
+  color: #1f2937;
+
+  min-height: 100vh;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.main-header {
+  background: linear-gradient(135deg, #2f8f46, #4caf50, #65bc69);
+
+  color: white;
+
+  padding: 10px 30px;
+}
+
+.header-container {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 40px;
+}
+
+/* =========================================
+   WEBSITE LOGO
+========================================= */
+
+.brand-section {
+  display: flex;
+  align-items: center;
+}
+
+.website-logo {
+  width: auto;
+  height: 145px;
+  max-width: 600px;
+
+  display: block;
+  object-fit: contain;
+}
+
+/* =========================================
+   CONTACT HEADER
+========================================= */
+
+.contact-section {
+  min-width: 310px;
+
+  padding: 15px 18px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.11);
+
+  line-height: 1.55;
+}
+
+.contact-section h3 {
+  margin-bottom: 5px;
+
+  font-size: 17px;
+}
+
+.contact-section p {
+  font-size: 14px;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.main-nav {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 100;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  background: white;
+
+  padding: 14px 20px;
+
+  border-bottom: 1px solid #e3ebe3;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.main-nav button {
+  border: none;
+
+  background: transparent;
+
+  color: #374151;
+
+  padding: 10px 13px;
+
+  border-radius: 7px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.main-nav button:hover {
+  background: #ecf8ee;
+
+  color: #2e7d32;
+}
+
+/* =========================================
+   NOTIFICATION COUNT
+========================================= */
+
+.notification-count {
+  display: inline-block;
+
+  min-width: 20px;
+
+  margin-left: 4px;
+
+  padding: 2px 6px;
+
+  border-radius: 999px;
+
+  background: #43a047;
+
+  color: white;
+
+  font-size: 11px;
+
+  text-align: center;
+}
+
+/* =========================================
+   HOME HERO
+========================================= */
+
+.home-hero {
+  position: relative;
+
+  min-height: 570px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 55px 20px;
+
+  background-image:
+    linear-gradient(rgba(245, 251, 246, 0.78), rgba(245, 251, 246, 0.84)),
+    url("images/farm1.jpg");
+
+  background-position: center;
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+
+  transition: background-image 1.2s ease-in-out;
+}
+
+.hero-overlay {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+}
+
+.welcome-card {
+  width: min(820px, 94%);
+
+  padding: 48px 42px;
+
+  background: rgba(255, 255, 255, 0.82);
+
+  backdrop-filter: blur(7px);
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.09);
+}
+
+.hero-tag {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: #2e8b44;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+.welcome-card h2 {
+  margin-bottom: 12px;
+
+  color: #17251b;
+
+  font-size: 36px;
+}
+
+.hero-main-text {
+  margin-bottom: 7px;
+
+  color: #374151;
+
+  font-size: 18px;
+}
+
+.hero-sub-text {
+  max-width: 610px;
+
+  margin: 0 auto 28px;
+
+  color: #6b7280;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+.our-services-title {
+  margin-bottom: 15px;
+
+  color: #25332a;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+/* =========================================
+   HOME SERVICE BUTTONS
+========================================= */
+
+.home-service-buttons {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+.home-service-buttons button {
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #43a047;
+
+  color: white;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.home-service-buttons button:hover {
+  background: #2e7d32;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   PAGE SECTIONS
+========================================= */
+
+.page-section {
+  min-height: 540px;
+
+  padding: 50px 20px;
+}
+
+.content-section {
+  width: min(1050px, 92%);
+
+  min-height: 500px;
+
+  margin: 40px auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.form-card {
+  width: min(460px, 94%);
+
+  margin: 0 auto;
+
+  padding: 34px;
+
+  border: 1px solid #e2e8e2;
+
+  border-radius: 17px;
+
+  background: white;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+}
+
+.form-card h2 {
+  margin: 7px 0 8px;
+
+  font-size: 27px;
+}
+
+.form-description {
+  margin-bottom: 24px;
+
+  color: #6b7280;
+
+  line-height: 1.5;
+}
+
+.section-tag {
+  display: inline-block;
+
+  color: #3a9a50;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+form label {
+  display: block;
+
+  margin: 13px 0 5px;
+
+  color: #374151;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+
+  padding: 12px 13px;
+
+  border: 1px solid #d4ddd5;
+
+  border-radius: 8px;
+
+  background: #fbfdfb;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #4caf50;
+
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+textarea {
+  min-height: 95px;
+
+  resize: vertical;
+}
+
+form button {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 13px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #43a047;
+
+  color: white;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #2e7d32;
+}
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.section-header {
+  margin-bottom: 20px;
+
+  padding: 25px 28px;
+
+  border: 1px solid #e5eae5;
+
+  border-radius: 15px;
+
+  background: white;
+
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.045);
+}
+
+.section-header h2 {
+  margin: 5px 0 6px;
+
+  font-size: 29px;
+}
+
+.section-header p {
+  color: #6b7280;
+}
+
+/* =========================================
+   ORDER / PAYMENT CARDS
+========================================= */
+
+.order-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+
+  gap: 18px;
+}
+
+.order-card {
+  padding: 22px;
+
+  border: 1px solid #e1e7e2;
+
+  border-radius: 14px;
+
+  background: white;
+
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.05);
+}
+
+.order-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 18px;
+}
+
+.order-id {
+  color: #18251d;
+
+  font-weight: 700;
+}
+
+.status-badge {
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.status-pending {
+  background: #fff7ed;
+
+  color: #c2410c;
+}
+
+.status-paid {
+  background: #eafaf0;
+
+  color: #08783d;
+}
+
+.status-cancelled {
+  background: #fff0f0;
+
+  color: #b42318;
+}
+
+.status-delivered {
+  background: #eef5ff;
+
+  color: #2055a5;
+}
+
+.order-details {
+  display: grid;
+
+  gap: 11px;
+
+  margin-bottom: 18px;
+}
+
+.order-row {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid #f0f2f0;
+}
+
+.order-label {
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.order-value {
+  color: #1f2937;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  text-align: right;
+
+  overflow-wrap: anywhere;
+}
+
+.order-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+}
+
+.pay-btn,
+.cancel-btn,
+.mark-read-btn {
+  padding: 9px 13px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.pay-btn,
+.mark-read-btn {
+  background: #43a047;
+
+  color: white;
+}
+
+.pay-btn:hover,
+.mark-read-btn:hover {
+  background: #2e7d32;
+}
+
+.cancel-btn {
+  background: #feeaea;
+
+  color: #b42318;
+}
+
+.cancel-btn:hover {
+  background: #ffdcdc;
+}
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-section {
+  width: min(760px, 92%);
+}
+
+.profile-card {
+  padding: 32px;
+
+  border: 1px solid #e3e9e3;
+
+  border-radius: 17px;
+
+  background: white;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.065);
+}
+
+.profile-avatar {
+  width: 72px;
+
+  height: 72px;
+
+  margin-bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #43a047, #65bc69);
+
+  color: white;
+
+  font-size: 28px;
+
+  font-weight: 700;
+}
+
+.profile-heading h2 {
+  margin: 5px 0;
+}
+
+.profile-heading p {
+  margin-bottom: 24px;
+
+  color: #6b7280;
+}
+
+.profile-details {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.profile-item {
+  padding: 16px;
+
+  border: 1px solid #e2e8e2;
+
+  border-radius: 10px;
+
+  background: #fafcfb;
+}
+
+.profile-label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+
+  text-transform: uppercase;
+}
+
+.profile-value {
+  font-weight: 600;
+
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   NOTIFICATIONS
+========================================= */
+
+.notification-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.notification-card {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 17px;
+
+  padding: 20px;
+
+  border: 1px solid #e0e7e1;
+
+  border-radius: 14px;
+
+  background: white;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.045);
+}
+
+.notification-icon {
+  min-width: 48px;
+
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e9f9ee;
+
+  font-size: 21px;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 7px;
+}
+
+.notification-top strong {
+  color: #17251b;
+}
+
+.notification-content p {
+  margin-bottom: 10px;
+
+  color: #4b5563;
+
+  line-height: 1.5;
+}
+
+.notification-status {
+  padding: 4px 8px;
+
+  border-radius: 999px;
+
+  background: #fff3e8;
+
+  color: #c2410c;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.notification-meta {
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 8px;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.main-footer {
+  margin-top: 45px;
+
+  background: #276d34;
+
+  color: white;
+}
+
+.footer-container {
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  padding: 30px;
+
+  display: grid;
+
+  grid-template-columns: 1.3fr 1fr 1fr;
+
+  gap: 35px;
+}
+
+.footer-brand h3,
+.footer-info h4,
+.footer-contact h4 {
+  margin-bottom: 8px;
+}
+
+.footer-container p {
+  color: rgba(255, 255, 255, 0.86);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.footer-bottom {
+  padding: 13px 20px;
+
+  background: #205b2b;
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+  .website-logo {
+    width: 400px;
+  }
+  .header-container {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .contact-section {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .brand-section h1 {
+    font-size: 31px;
+  }
+
+  .main-nav {
+    position: static;
+  }
+
+  .welcome-card {
+    padding: 35px 22px;
+  }
+
+  .welcome-card h2 {
+    font-size: 29px;
+  }
+
+  .profile-details {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .website-logo {
+    width: 100%;
+  }
+  .main-header {
+    padding: 20px 18px;
+  }
+
+  .main-nav {
+    padding: 10px;
+  }
+
+  .main-nav button {
+    padding: 8px 9px;
+
+    font-size: 12px;
+  }
+
+  .home-hero {
+    min-height: 520px;
+  }
+
+  .welcome-card h2 {
+    font-size: 25px;
+  }
+
+  .order-row {
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+  .order-value {
+    text-align: left;
+  }
+
+  .notification-card {
+    flex-direction: column;
+  }
+
+  .notification-meta {
+    flex-direction: column;
+
+    gap: 3px;
+  }
+}
+
+/* =========================================
+   ABOUT US
+========================================= */
+
+.about-section {
+  width: min(1100px, 92%);
+}
+
+/* MAIN ABOUT CARD */
+
+.about-main-card {
+  display: grid;
+
+  grid-template-columns: 1.7fr 0.8fr;
+
+  gap: 25px;
+
+  margin-bottom: 22px;
+
+  padding: 34px;
+
+  background: white;
+
+  border: 1px solid #e1e8e2;
+
+  border-radius: 17px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.about-text h2 {
+  margin: 7px 0 15px;
+
+  color: #17251b;
+
+  font-size: 29px;
+}
+
+.about-text p {
+  margin-bottom: 13px;
+
+  color: #5d6860;
+
+  line-height: 1.7;
+
+  font-size: 15px;
+}
+
+/* OWNER */
+
+.owner-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  align-self: center;
+
+  padding: 22px;
+
+  background: linear-gradient(135deg, #edf9ef, #f8fcf8);
+
+  border: 1px solid #d8eadb;
+
+  border-radius: 14px;
+}
+
+.owner-avatar {
+  width: 65px;
+
+  height: 65px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #43a047, #65bc69);
+
+  color: white;
+
+  font-size: 27px;
+
+  font-weight: 700;
+}
+
+.owner-label {
+  color: #43a047;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.owner-card h3 {
+  margin: 4px 0;
+
+  font-size: 22px;
+
+  color: #17251b;
+}
+
+.owner-card p {
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+/* VALUES */
+
+.about-values {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 22px;
+}
+
+.value-card {
+  padding: 23px;
+
+  background: white;
+
+  border: 1px solid #e1e8e2;
+
+  border-radius: 14px;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+}
+
+.value-icon {
+  width: 46px;
+
+  height: 46px;
+
+  margin-bottom: 13px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #edf9ef;
+
+  font-size: 21px;
+}
+
+.value-card h3 {
+  margin-bottom: 8px;
+
+  color: #1b2b20;
+
+  font-size: 17px;
+}
+
+.value-card p {
+  color: #6b7280;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* MISSION */
+
+.mission-card {
+  margin-bottom: 22px;
+
+  padding: 32px;
+
+  border-radius: 17px;
+
+  background: linear-gradient(135deg, #2f8f46, #4caf50);
+
+  color: white;
+}
+
+.mission-card .section-tag {
+  color: #d8f5dd;
+}
+
+.mission-card h2 {
+  margin: 7px 0 12px;
+
+  font-size: 27px;
+}
+
+.mission-card p {
+  max-width: 800px;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  line-height: 1.7;
+}
+
+/* QUALITY SECTION */
+
+.quality-section {
+  display: grid;
+
+  grid-template-columns: 1.3fr 0.8fr;
+
+  gap: 24px;
+
+  padding: 32px;
+
+  background: white;
+
+  border: 1px solid #e1e8e2;
+
+  border-radius: 17px;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.quality-content h2 {
+  margin: 7px 0 13px;
+
+  color: #17251b;
+
+  font-size: 27px;
+}
+
+.quality-content p {
+  margin-bottom: 12px;
+
+  color: #626d65;
+
+  line-height: 1.65;
+}
+
+.quality-points {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.quality-points span {
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  background: #edf9ef;
+
+  color: #2d7e3d;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+/* CERTIFICATE */
+
+.certificate-card {
+  padding: 18px;
+
+  border: 1px solid #dce5dd;
+
+  border-radius: 13px;
+
+  background: #fafcfb;
+
+  text-align: center;
+}
+
+.certificate-card h3 {
+  margin-bottom: 13px;
+
+  color: #243129;
+}
+
+.certificate-image {
+  width: 100%;
+
+  max-height: 340px;
+
+  object-fit: contain;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 8px;
+}
+
+.certificate-card p {
+  margin-top: 11px;
+
+  color: #8a938d;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+/* ABOUT RESPONSIVE */
+
+@media (max-width: 850px) {
+  .about-main-card,
+  .quality-section {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+
+  .quality-points {
+    grid-template-columns: 1fr;
+  }
+
+  .about-main-card,
+  .quality-section,
+  .mission-card {
+    padding: 22px;
+  }
+}
+
+#dairy-products-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.product-card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.product-card h3 {
+  margin-top: 0;
+}
+
+.available {
+  font-weight: bold;
+}
+
+.unavailable {
+  font-weight: bold;
+}
+
+/* ==============================
+   Dairy Products Navigation
+   ============================== */
+
+/* ==============================
+   Dairy Products Section
+   ============================== */
+
+#dairy-products-section {
+  min-height: 100vh;
+  padding: 45px 50px 70px;
+  background: #f5faf6;
+  text-align: center;
+}
+
+#dairy-products-section .section-card {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+#dairy-products-section h2 {
+  font-size: 32px;
+  color: #173d26;
+  margin-bottom: 8px;
+}
+
+#dairy-products-section .section-card > p {
+  font-size: 16px;
+  color: #65736b;
+  margin-bottom: 35px;
+}
+
+/* ==============================
+   Dairy Product Grid
+   ============================== */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* ==============================
+   Dairy Product Card
+   ============================== */
+
+.product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  text-align: left;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5eee7;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.14);
+}
+
+.product-card h3 {
+  font-size: 21px;
+  color: #173d26;
+  margin: 0 0 12px;
+}
+
+.product-card p {
+  margin: 6px 0;
+  color: #46534b;
+  line-height: 1.5;
+}
+
+.product-price {
+  margin-top: 12px !important;
+  font-size: 20px;
+  font-weight: 700;
+  color: #238636 !important;
+}
+
+.available {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  background: #e8f5e9;
+  color: #20833a;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+.unavailable {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px 10px;
+  background: #fdecec;
+  color: #c62828;
+  border-radius: 20px;
+  font-weight: 700;
+}
+
+/* ==============================
+   Dairy Order Button
+   ============================== */
+
+.product-card button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #3aa94b;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.product-card button:hover {
+  background: #2d8d3d;
+  transform: translateY(-1px);
+}
+
+/* ==============================
+   Responsive Dairy Products
+   ============================== */
+
+@media (max-width: 768px) {
+  #dairy-products-section {
+    padding: 30px 18px 50px;
+  }
+
+  #dairy-products-section h2 {
+    font-size: 26px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   FRESH FARM - DAIRY PRODUCTS PAGE
+   ========================================================= */
+
+.dairy-page::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(247, 253, 247, 0.2);
+
+  pointer-events: none;
+}
+
+.dairy-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.dairy-heading {
+  text-align: center;
+
+  margin: 0 auto 30px;
+
+  padding: 18px 30px;
+
+  max-width: 750px;
+
+  background: rgba(255, 255, 255, 0.6);
+
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+
+  border-radius: 18px;
+
+  animation: dairyHeadingFade 0.7s ease both;
+}
+
+.dairy-heading h2 {
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: 700;
+
+  color: #155b2c;
+}
+
+.dairy-heading p {
+  margin: 8px 0 0;
+
+  color: #58685e;
+
+  font-size: 15px;
+}
+
+/* =========================================================
+   DECORATIVE TITLE DIVIDER
+   ========================================================= */
+
+.title-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  margin: 13px auto 8px;
+}
+
+.title-divider span:not(.leaf) {
+  width: 90px;
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, #48a85d);
+}
+
+.title-divider span:last-child {
+  background: linear-gradient(90deg, #48a85d, transparent);
+}
+
+.title-divider .leaf {
+  font-size: 18px;
+
+  animation: leafFloat 2.5s ease-in-out infinite;
+}
+
+/* =========================================================
+   PRODUCT GRID
+   ========================================================= */
+
+.products-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 20px;
+
+  width: 100%;
+}
+
+/* =========================================================
+   PRODUCT CARD
+   ========================================================= */
+
+.product-card {
+  background: rgba(255, 255, 255, 0.94);
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(31, 120, 61, 0.12);
+
+  box-shadow: 0 8px 24px rgba(28, 88, 43, 0.13);
+
+  overflow: hidden;
+
+  min-height: 410px;
+
+  display: flex;
+  flex-direction: column;
+
+  opacity: 0;
+  transform: translateY(20px);
+
+  animation: productCardEnter 0.6s ease forwards;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.01);
+
+  border-color: rgba(45, 167, 73, 0.3);
+
+  box-shadow: 0 16px 34px rgba(32, 105, 54, 0.17);
+}
+
+/* =========================================================
+   PRODUCT IMAGE
+   ========================================================= */
+
+.product-image-wrapper {
+  height: 150px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  margin: 14px 14px 0;
+
+  border-radius: 50%;
+
+  background: radial-gradient(circle, #f4fbf4 0%, #edf8ef 58%, transparent 60%);
+
+  overflow: hidden;
+}
+
+.product-image {
+  width: 135px;
+  height: 125px;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.08) rotate(-1deg);
+
+  filter: drop-shadow(0 9px 10px rgba(0, 0, 0, 0.12));
+}
+
+/* fallback when image missing */
+
+.image-fallback::after {
+  content: "🥛";
+
+  font-size: 64px;
+
+  animation: productFallbackFloat 2.4s ease-in-out infinite;
+}
+
+/* =========================================================
+   PRODUCT CONTENT
+   ========================================================= */
+
+.product-content {
+  padding: 12px 18px 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+}
+
+.product-content h3 {
+  margin: 0 0 9px;
+
+  text-align: center;
+
+  font-size: 19px;
+
+  line-height: 1.2;
+
+  color: #104f26;
+
+  font-weight: 700;
+}
+
+.product-category {
+  font-size: 13px;
+
+  color: #3e4d44;
+
+  margin: 3px 0;
+}
+
+.product-description {
+  font-size: 13px;
+
+  color: #67736c;
+
+  margin: 5px 0 10px;
+
+  line-height: 1.4;
+
+  min-height: 36px;
+}
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
+.product-price {
+  color: #138534;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  margin: 4px 0 8px;
+}
+
+.product-price span {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.product-status {
+  margin-bottom: 12px;
+}
+
+.available {
+  display: inline-block;
+
+  background: linear-gradient(135deg, #e6f7e9, #d7f1dc);
+
+  color: #21823a;
+
+  padding: 5px 11px;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.unavailable {
+  display: inline-block;
+
+  background: #fde7e7;
+
+  color: #c0392b;
+
+  padding: 5px 11px;
+
+  border-radius: 30px;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   ORDER BUTTON
+   ========================================================= */
+
+.dairy-order-btn {
+  margin-top: auto;
+
+  width: 100%;
+
+  border: none;
+
+  border-radius: 8px;
+
+  padding: 11px 12px;
+
+  background: linear-gradient(135deg, #25a944, #178f34);
+
+  color: #ffffff;
+
+  font-weight: 700;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 12px rgba(31, 155, 62, 0.2);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.dairy-order-btn:hover {
+  transform: translateY(-2px);
+
+  background: linear-gradient(135deg, #2ab94c, #159136);
+
+  box-shadow: 0 8px 18px rgba(31, 155, 62, 0.3);
+}
+
+.dairy-order-btn:active {
+  transform: scale(0.98);
+}
+
+.cart-icon {
+  margin-right: 5px;
+}
+
+.dairy-order-btn.disabled {
+  cursor: not-allowed;
+
+  background: #a8b0aa;
+
+  box-shadow: none;
+}
+
+/* =========================================================
+   LOADING / ERROR
+   ========================================================= */
+
+.products-loading,
+.products-error {
+  grid-column: 1 / -1;
+
+  text-align: center;
+
+  padding: 50px;
+
+  font-size: 16px;
+
+  color: #607067;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes productCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dairyHeadingFade {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes leafFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-4px) rotate(5deg);
+  }
+}
+
+@keyframes productFallbackFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 950px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .dairy-page {
+    padding: 30px 18px 50px;
+  }
+
+  .dairy-heading h2 {
+    font-size: 25px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   FINAL DAIRY PRODUCTS BACKGROUND
+   Keep this at the VERY END of style.css
+   ========================================================= */
+
+#dairy-products-section.dairy-page {
+  min-height: 100vh;
+
+  padding: 38px 28px 70px;
+
+  position: relative;
+
+  background-image: url("./images/dairy-background.png");
+
+  background-size: cover;
+
+  background-position: center top;
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+
+  text-align: center;
+}
+
+/* Very light overlay so text/cards stay readable */
+
+#dairy-products-section.dairy-page::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: rgba(248, 253, 248, 0.08);
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+/* Keep actual content above background */
+
+#dairy-products-section .dairy-wrapper {
+  width: 100%;
+
+  max-width: 1280px;
+
+  margin: 0 auto;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+/* Heading glass panel */
+
+#dairy-products-section .dairy-heading {
+  max-width: 750px;
+
+  margin: 0 auto 30px;
+
+  padding: 18px 30px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.72);
+
+  border: 1px solid rgba(255, 255, 255, 0.8);
+
+  border-radius: 18px;
+
+  backdrop-filter: blur(4px);
+
+  -webkit-backdrop-filter: blur(4px);
+
+  box-shadow: 0 8px 25px rgba(34, 91, 48, 0.08);
+}
+
+/* Product cards */
+
+#dairy-products-section .product-card {
+  background: rgba(255, 255, 255, 0.94);
+
+  backdrop-filter: blur(4px);
+
+  -webkit-backdrop-filter: blur(4px);
+
+  border: 1px solid rgba(40, 130, 65, 0.13);
+
+  box-shadow: 0 9px 25px rgba(32, 90, 48, 0.13);
+}
+
+nav a {
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  line-height: normal;
+  text-decoration: none;
+}
+
+/* Keep Dairy Products navigation identical to other menu items */
+nav a,
+nav a:link,
+nav a:visited,
+nav a:active {
+  color: #374151;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #2f8f46;
+}

@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: freshfarm-config
+  namespace: freshfarm
+
+data:
+  DB_HOST: "freshfarm-mysql.ckli00iasle9.us-east-1.rds.amazonaws.com"
+  DB_PORT: "3306"
+  DB_NAME: "freshfarm"
+  DB_USER: "freshfarmadmin"
+
+  USER_SERVICE_URL: "http://user-service:5000"
+  ORDER_SERVICE_URL: "http://order-service:5001"
+  PAYMENT_SERVICE_URL: "http://payment-service:5002"
+  NOTIFICATION_SERVICE_URL: "http://notification-service:5003"

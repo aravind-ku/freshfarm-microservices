@@ -1,0 +1,288 @@
+services:
+  # =========================================================
+  # FRONTEND
+  # =========================================================
+  frontend:
+    image: aravind53/freshfarm-frontend:v1.0
+    container_name: freshfarm-frontend
+
+    ports:
+      - "8080:80"
+
+    depends_on:
+      - user-service
+      - order-service
+      - payment-service
+      - notification-service
+      - dairy-products-service
+      - inventory-service
+      - analytics-service
+      - delivery-service
+
+    networks:
+      - freshfarm-network
+
+    restart: unless-stopped
+
+  # =========================================================
+  # MYSQL
+  # =========================================================
+  mysql:
+    image: mysql:8.4
+    container_name: freshfarm-mysql
+
+    environment:
+      MYSQL_ROOT_PASSWORD: freshfarmroot
+      MYSQL_DATABASE: freshfarm
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - freshfarm-mysql-data:/var/lib/mysql
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+    networks:
+      - freshfarm-network
+
+    restart: unless-stopped
+
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "mysqladmin ping -h 127.0.0.1 -uroot -p$$MYSQL_ROOT_PASSWORD --silent",
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 15
+      start_period: 30s
+
+  # =========================================================
+  # USER SERVICE - NODE.JS
+  # =========================================================
+  user-service:
+    image: aravind53/freshfarm-user-service:v1.0
+    container_name: freshfarm-user
+
+    ports:
+      - "5000:5000"
+
+    env_file:
+      - ./user-service/.env
+
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: freshfarmroot
+      DB_NAME: freshfarm
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    networks:
+      - freshfarm-network
+
+    restart: unless-stopped
+
+  # =========================================================
+  # ORDER SERVICE - NODE.JS
+  # =========================================================
+  order-service:
+    image: aravind53/freshfarm-order-service:v1.0
+    container_name: freshfarm-order
+
+    ports:
+      - "5001:5001"
+
+    env_file:
+      - ./order-service/.env
+
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: freshfarmroot
+      DB_NAME: freshfarm
+
+      # Docker service-to-service communication
+      DAIRY_SERVICE_URL: http://dairy-products-service:5004
+      INVENTORY_SERVICE_URL: http://inventory-service:5005
+      NOTIFICATION_SERVICE_URL: http://notification-service:5003
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+      dairy-products-service:
+        condition: service_started
+      inventory-service:
+        condition: service_started
+      notification-service:
+        condition: service_started
+
+    networks:
+      - freshfarm-network
+
+    restart: unless-stopped
+
+  # =========================================================
+  # PAYMENT SERVICE - NODE.JS
+  # =========================================================
+  payment-service:
+    image: aravind53/freshfarm-payment-service:v1.0
+    container_name: freshfarm-payment
+
+    ports:
+      - "5002:5002"
+
+    env_file:
+      - ./payment-service/.env
+
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: freshfarmroot
+      DB_NAME: freshfarm
+
+      ORDER_SERVICE_URL: http://order-service:5001
+      NOTIFICATION_SERVICE_URL: http://notification-service:5003
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+      order-service:
+        condition: service_started
+      notification-service:
+        condition: service_started
+
+    networks:
+      - freshfarm-network
+
+    restart: unless-stopped
+
+  # =========================================================
+  # NOTIFICATION SERVICE - NODE.JS
+  # =========================================================
+  notification-service:
+    image: aravind53/freshfarm-notification-service:v1.0
+    container_name: freshfarm-notification
+
+    ports:
+      - "5003:5003"
+
+    env_file:
+      - ./notification-service/.env
+
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: freshfarmroot
+      DB_NAME: freshfarm
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    networks:
+      - freshfarm-network
+
+    restart: unless-stopped
+
+  # =========================================================
+  # DAIRY PRODUCTS SERVICE - GO
+  # =========================================================
+  dairy-products-service:
+    image: aravind53/freshfarm-dairy-service:v1.0
+    container_name: freshfarm-dairy
+
+    ports:
+      - "5004:5004"
+
+    networks:
+      - freshfarm-network
+
+    restart: unless-stopped
+
+  # =========================================================
+  # INVENTORY SERVICE - JAVA / SPRING BOOT
+  # =========================================================
+  inventory-service:
+    image: aravind53/freshfarm-inventory-service:v1.0
+    container_name: freshfarm-inventory
+
+    ports:
+      - "5005:5005"
+
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/freshfarm
+      DB_USER: root
+      DB_PASSWORD: freshfarmroot
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    networks:
+      - freshfarm-network
+
+    restart: unless-stopped
+
+  # =========================================================
+  # ANALYTICS SERVICE - PYTHON
+  # =========================================================
+  analytics-service:
+    image: aravind53/freshfarm-analytics-service:v1.0
+    container_name: freshfarm-analytics
+
+    ports:
+      - "5006:5006"
+
+    environment:
+      PORT: 5006
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: freshfarm
+      DB_USER: root
+      DB_PASSWORD: freshfarmroot
+
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+    networks:
+      - freshfarm-network
+
+    restart: unless-stopped
+
+  # =========================================================
+  # DELIVERY SERVICE - .NET
+  # =========================================================
+  delivery-service:
+    image: aravind53/freshfarm-delivery-service:v1.0
+    container_name: freshfarm-delivery
+
+    ports:
+      - "5007:5007"
+
+    networks:
+      - freshfarm-network
+
+    restart: unless-stopped
+
+# =========================================================
+# NETWORK
+# =========================================================
+networks:
+  freshfarm-network:
+    name: freshfarm-network
+    driver: bridge
+
+# =========================================================
+# VOLUMES
+# =========================================================
+volumes:
+  freshfarm-mysql-data:

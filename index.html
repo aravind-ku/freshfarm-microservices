@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Fresh Farm Milk</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- =====================================
+       HEADER
+  ====================================== -->
+
+    <header class="main-header">
+      <div class="header-container">
+        <div class="brand-section">
+          <img
+            src="images/farm5.png"
+            alt="Fresh Farm Milk Logo"
+            class="website-logo"
+          />
+        </div>
+
+        <div class="contact-section">
+          <h3>Contact Us</h3>
+
+          <p>Sujatha Nagar 80 feet Road,</p>
+
+          <p>VSP, Andhra Pradesh - 530051</p>
+
+          <p>
+            <strong>Phone:</strong>
+            +91 9247279393
+          </p>
+
+          <p>
+            <strong>Email:</strong>
+            info@freshfarmmilk.com
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- =====================================
+       TOP NAVIGATION
+  ====================================== -->
+
+    <nav class="main-nav">
+      <button onclick="showHome()">Home</button>
+
+      <button onclick="showSection('about-section')">About Us</button>
+
+      <a href="#" id="dairyProductsNav">Dairy Products</a>
+
+      <button onclick="showSection('signup-section')">Sign Up</button>
+
+      <button onclick="showSection('login-section')">Login</button>
+
+      <button onclick="showSection('order-section')">Order Milk</button>
+
+      <button onclick="getOrderHistory()">Order History</button>
+
+      <button onclick="getPaymentHistory()">Payment History</button>
+
+      <button onclick="getNotifications()">
+        Notifications
+
+        <span id="notificationCount" class="notification-count"> 0 </span>
+      </button>
+
+      <button onclick="getProfile()">My Profile</button>
+    </nav>
+
+    <!-- =====================================
+       HOME / HERO
+  ====================================== -->
+
+    <main id="home-section" class="home-hero">
+      <div class="hero-overlay">
+        <div class="welcome-card">
+          <span class="hero-tag"> Fresh • Natural • Healthy </span>
+
+          <h2>Welcome to Fresh Farm Milk!</h2>
+
+          <p class="hero-main-text">
+            Your one-stop shop for fresh and organic milk.
+          </p>
+
+          <p class="hero-sub-text">
+            Farm fresh milk delivered directly to your doorstep with quality,
+            freshness and care.
+          </p>
+
+          <div class="our-services-title">Our Services</div>
+
+          <div class="home-service-buttons">
+            <button onclick="showSection('signup-section')">Sign Up</button>
+
+            <button onclick="showSection('login-section')">Login</button>
+
+            <button onclick="showSection('order-section')">Order Milk</button>
+
+            <button onclick="getOrderHistory()">Order History</button>
+
+            <button onclick="getPaymentHistory()">Payment History</button>
+
+            <button onclick="getNotifications()">Notifications</button>
+
+            <button onclick="getProfile()">My Profile</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- =====================================
+     ABOUT US
+====================================== -->
+
+    <section id="about-section" class="content-section about-section hidden">
+      <!-- ABOUT HEADING -->
+
+      <div class="section-header">
+        <span class="section-tag"> Our Story </span>
+
+        <h2>About Fresh Farm Milk</h2>
+
+        <p>Freshness from the farm, delivered with care to your doorstep.</p>
+      </div>
+
+      <!-- ABOUT CONTENT -->
+
+      <div class="about-main-card">
+        <div class="about-text">
+          <span class="section-tag"> Who We Are </span>
+
+          <h2>Fresh Milk. Trusted Quality. Healthy Families.</h2>
+
+          <p>
+            Fresh Farm Milk was created with a simple goal — to make fresh and
+            quality milk conveniently available to families while maintaining
+            transparency from farm to doorstep.
+          </p>
+
+          <p>
+            We focus on freshness, responsible handling, hygienic practices and
+            reliable home delivery. Our aim is to build long-term trust with
+            every customer who chooses Fresh Farm Milk.
+          </p>
+        </div>
+
+        <!-- OWNER -->
+
+        <div class="owner-card">
+          <div class="owner-avatar">A</div>
+
+          <div>
+            <span class="owner-label"> Founder & Owner </span>
+
+            <h3>Aravind</h3>
+
+            <p>Fresh Farm Milk</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- OUR VALUES -->
+
+      <div class="about-values">
+        <div class="value-card">
+          <div class="value-icon">🥛</div>
+
+          <h3>Fresh Milk</h3>
+
+          <p>
+            Focused on delivering fresh milk with careful handling throughout
+            the delivery process.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">🌿</div>
+
+          <h3>Natural Approach</h3>
+
+          <p>
+            Our goal is to keep quality, freshness and responsible farming
+            practices at the heart of our service.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">🛡️</div>
+
+          <h3>Quality First</h3>
+
+          <p>
+            We believe hygienic handling and consistent quality checks are
+            essential for customer confidence.
+          </p>
+        </div>
+
+        <div class="value-card">
+          <div class="value-icon">🚚</div>
+
+          <h3>Doorstep Delivery</h3>
+
+          <p>
+            Our technology-enabled ordering system makes ordering and receiving
+            fresh milk simple and convenient.
+          </p>
+        </div>
+      </div>
+
+      <!-- MISSION -->
+
+      <div class="mission-card">
+        <div>
+          <span class="section-tag"> Our Mission </span>
+
+          <h2>From Our Farm to Your Family</h2>
+
+          <p>
+            Our mission is to create a dependable, technology-enabled fresh milk
+            service where customers can order, pay, track and receive updates
+            easily while we continue focusing on product quality and customer
+            satisfaction.
+          </p>
+        </div>
+      </div>
+
+      <!-- QUALITY CERTIFICATION -->
+
+      <div class="quality-section">
+        <div class="quality-content">
+          <span class="section-tag"> Quality & Standards </span>
+
+          <h2>Our Commitment to Quality</h2>
+
+          <p>
+            Fresh Farm Milk aims to follow appropriate hygiene, food-safety and
+            quality practices throughout milk handling and delivery.
+          </p>
+
+          <p>
+            Relevant official registrations and certifications can be displayed
+            here as they are obtained and verified.
+          </p>
+
+          <div class="quality-points">
+            <span>✓ Hygienic handling</span>
+
+            <span>✓ Freshness focused</span>
+
+            <span>✓ Quality monitoring</span>
+
+            <span>✓ Responsible delivery</span>
+          </div>
+        </div>
+
+        <div class="certificate-card">
+          <h3>Quality Certificate</h3>
+
+          <img
+            src="images/quality-certificate.jpg"
+            alt="Fresh Farm Milk Quality Certificate"
+            class="certificate-image"
+          />
+
+          <p>
+            Verified quality and food-safety certifications will be displayed
+            here.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+       SIGN UP
+  ====================================== -->
+
+    <section id="signup-section" class="page-section hidden">
+      <div class="form-card">
+        <span class="section-tag"> Join Fresh Farm </span>
+
+        <h2>Create Account</h2>
+
+        <p class="form-description">
+          Register to order fresh milk and track your deliveries.
+        </p>
+
+        <form id="signupForm">
+          <label for="signupName"> Full Name </label>
+
+          <input
+            type="text"
+            id="signupName"
+            placeholder="Enter your full name"
+            required
+          />
+
+          <label for="signupEmail"> Email Address </label>
+
+          <input
+            type="email"
+            id="signupEmail"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="signupPassword"> Password </label>
+
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Create password"
+            required
+          />
+
+          <button type="submit">Create Account</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- =====================================
+       LOGIN
+  ====================================== -->
+
+    <section id="login-section" class="page-section hidden">
+      <div class="form-card">
+        <span class="section-tag"> Welcome Back </span>
+
+        <h2>Login</h2>
+
+        <p class="form-description">Sign in to your Fresh Farm account.</p>
+
+        <form id="loginForm">
+          <label for="loginEmail"> Email Address </label>
+
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="Enter your email"
+            required
+          />
+
+          <label for="loginPassword"> Password </label>
+
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Enter your password"
+            required
+          />
+
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- =====================================
+       ORDER MILK
+  ====================================== -->
+
+    <section id="order-section" class="page-section hidden">
+      <div class="form-card">
+        <span class="section-tag"> Fresh Delivery </span>
+
+        <h2>Order Fresh Milk</h2>
+
+        <p class="form-description">Choose your preferred milk and quantity.</p>
+
+        <form id="orderForm">
+          <label for="customerName"> Customer Name </label>
+
+          <input
+            type="text"
+            id="customerName"
+            placeholder="Enter customer name"
+            required
+          />
+
+          <label for="phone"> Phone Number </label>
+
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Enter phone number"
+            required
+          />
+
+          <label for="address"> Delivery Address </label>
+
+          <textarea
+            id="address"
+            placeholder="Enter delivery address"
+            required
+          ></textarea>
+
+          <label for="milkType"> Milk Type </label>
+
+          <select id="milkType" required>
+            <option value="">Select Milk Type</option>
+
+            <option value="Cow Milk">Cow Milk</option>
+
+            <option value="Buffalo Milk">Buffalo Milk</option>
+
+            <option value="Goat Milk">Goat Milk</option>
+          </select>
+
+          <label for="quantity"> Quantity </label>
+
+          <input
+            type="number"
+            id="quantity"
+            min="1"
+            placeholder="Quantity in litres"
+            required
+          />
+
+          <button type="submit">Place Order</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- =====================================
+       ORDER HISTORY
+  ====================================== -->
+
+    <section id="history-section" class="content-section hidden">
+      <div class="section-header">
+        <span class="section-tag"> Your Orders </span>
+
+        <h2>Order History</h2>
+
+        <p>Track your milk orders, payments and delivery status.</p>
+      </div>
+
+      <div id="orderList" class="order-grid"></div>
+    </section>
+
+    <!-- =====================================
+       PAYMENT HISTORY
+  ====================================== -->
+
+    <section id="payment-history-section" class="content-section hidden">
+      <div class="section-header">
+        <span class="section-tag"> Transactions </span>
+
+        <h2>Payment History</h2>
+
+        <p>View your successful Fresh Farm Milk payment transactions.</p>
+      </div>
+
+      <div id="paymentList" class="order-grid"></div>
+    </section>
+
+    <!-- =====================================
+       NOTIFICATIONS
+  ====================================== -->
+
+    <section id="notifications-section" class="content-section hidden">
+      <div class="section-header">
+        <span class="section-tag"> Updates </span>
+
+        <h2>Notifications</h2>
+
+        <p>Stay updated about your orders, payments and cancellations.</p>
+      </div>
+
+      <div id="notificationList" class="notification-list"></div>
+    </section>
+
+    <!-- =====================================
+       PROFILE
+  ====================================== -->
+
+    <section
+      id="profile-section"
+      class="content-section profile-section hidden"
+    >
+      <div class="profile-card">
+        <div class="profile-avatar">
+          <span id="profileInitial"> U </span>
+        </div>
+
+        <div class="profile-heading">
+          <span class="section-tag"> My Account </span>
+
+          <h2 id="profileNameHeading">Customer Profile</h2>
+
+          <p>Fresh Farm Milk customer account</p>
+        </div>
+
+        <div class="profile-details">
+          <div class="profile-item">
+            <span class="profile-label"> User ID </span>
+
+            <span id="profileId" class="profile-value"></span>
+          </div>
+
+          <div class="profile-item">
+            <span class="profile-label"> Full Name </span>
+
+            <span id="profileName" class="profile-value"></span>
+          </div>
+
+          <div class="profile-item">
+            <span class="profile-label"> Email Address </span>
+
+            <span id="profileEmail" class="profile-value"></span>
+          </div>
+
+          <div class="profile-item">
+            <span class="profile-label"> Member Since </span>
+
+            <span id="profileCreated" class="profile-value"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dairy-products-section" class="section hidden dairy-page">
+      <div class="dairy-wrapper">
+        <div class="dairy-heading">
+          <h2>Fresh Dairy Products & Milk Sweets</h2>
+
+          <div class="title-divider">
+            <span></span>
+            <span class="leaf">🌿</span>
+            <span></span>
+          </div>
+
+          <p>Fresh products prepared from quality milk.</p>
+        </div>
+
+        <div id="dairy-products-container" class="products-grid">
+          <p>Loading dairy products...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================
+       FOOTER
+  ====================================== -->
+
+    <footer class="main-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h3>Fresh Farm Milk</h3>
+
+          <p>Pure • Fresh • Healthy • Delivered Daily</p>
+        </div>
+
+        <div class="footer-info">
+          <h4>Freshness You Can Trust</h4>
+
+          <p>Bringing quality farm-fresh milk closer to your family.</p>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact</h4>
+
+          <p>+91 9247279393</p>
+
+          <p>info@freshfarmmilk.com</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Fresh Farm Milk | All Rights Reserved
+      </div>
+    </footer>
+
+    <!-- Razorpay -->
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <!-- Main JavaScript -->
+
+    <script src="app.js"></script>
+  </body>
+</html>
